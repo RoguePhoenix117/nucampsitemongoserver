@@ -38,8 +38,8 @@ server.on('listening', onListening);
  */
 
 const options = {
-    key: fs.readFileSync(__dirname+'/server.key'),
-    cert: fs.readFileSync(__dirname+'/server.cert')
+  key: fs.readFileSync(__dirname+'/server.key'),
+  cert: fs.readFileSync(__dirname+'/server.cert')
 };
 
 const secureServer = https.createServer(options, app);
@@ -49,7 +49,7 @@ const secureServer = https.createServer(options, app);
  */
 
 secureServer.listen(app.get('secPort'), () => {
-    console.log('Server listening on port', app.get('secPort'));
+  console.log('Server listening on port', app.get('secPort'));
 });
 secureServer.on('error', onError);
 secureServer.on('listening', onListening);
@@ -113,5 +113,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-//this file is from cody, my file is wwwold
